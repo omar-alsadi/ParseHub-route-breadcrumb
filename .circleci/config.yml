@@ -1,0 +1,36 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: 'circleci/node:latest'
+    working_directory: ~/repo
+    branches:
+      only:
+        - master
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore NPM dependencies
+          keys:
+            - npm-{{ checksum "package.json" }}
+            - npm-
+      - run:
+          name: Install NPM dependencies
+          command: yarn
+      - save_cache:
+          name: Save NPM dependencies
+          paths:
+            - ./node_modules/
+          key: npm-{{ checksum "package.json" }}
+      - run:
+          name: Build
+          command: yarn build
+      - run:
+          name: Create 404 page
+          command: cp ./build/index.html ./build/404.html
+      - run: |
+          git config --global user.name "$GH_NAME"
+          git config --global user.email "$GH_EMAIL"
+      - run:
+          name: Publish to GitHub Pages
+          command: yarn deploy

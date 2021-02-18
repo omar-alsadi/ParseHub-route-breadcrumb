@@ -1,0 +1,42 @@
+.menu {
+    margin-bottom: 12px;
+}
+
+.menu a {
+    display: inline-block;
+    margin-bottom: -1px;
+    margin-right: 12px;
+    text-decoration: none;
+}
+
+.menu a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.menu-level-0 {}
+
+.menu-level-0 a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-right: 6px;
+}
+
+.breadcrumbs {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    font-size: 90%;
+}
+
+.breadcrumbs .item {
+    display: inline-block;
+}
+
+.breadcrumbs .item:first-child::before {
+    display: none;
+}
+
+.breadcrumbs .item::before {
+    content: "▸";
+    margin: 0 12px;
+}
