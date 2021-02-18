@@ -1,10 +1,7 @@
 # React app with nested routes and breadcrumbs
 
-An example of well-crafted React app with:
+live demo:
 
-* react-router
-* configurable nested routes
-* automatically generated navigation
-* automatically generated breadcrumbs
+https://omar-alsadi.github.io/ParseHub-route-breadcrumb/
 
 www.omaralsadi.dev
