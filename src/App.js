@@ -4,10 +4,6 @@ import "./App.css";
 import Page from "./navigation/Page";
 
 const App = ({ routes }) => (
-  // We use <BrowserRouter> in order to support
-  // routing example hosted on GitHub pages.
-  // <BrowserRouter> could be safely replaced with <Router> in
-  // your production application.
   <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Switch>
       {routes.map(route => (
